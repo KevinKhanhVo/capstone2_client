@@ -7,7 +7,7 @@ const MealSearchForm = ({ searchFilter }) => {
         e.preventDefault();
         let search = e.target.name.value === "" ? "" : `?name=${e.target.name.value}`;
 
-        axios.get("https://makeneat-express.herokuapp.com/meals" + search)
+        axios.get("https://capstone2-api.herokuapp.com/meals" + search)
             .then(response => searchFilter(response.data))
     }
     

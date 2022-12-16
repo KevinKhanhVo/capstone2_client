@@ -21,7 +21,7 @@ const UserSignupForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post("https://makeneat-express.herokuapp.com/users/register", formData)
+        axios.post("https://capstone2-api.herokuapp.com/users/register", formData)
         .then(response => {
             navigate('/')
             handleSetToken(response.data);

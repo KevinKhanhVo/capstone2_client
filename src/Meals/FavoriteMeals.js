@@ -12,7 +12,7 @@ const FavoriteMeals = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get('https://makeneat-express.herokuapp.com/favorites', {
+            const response = await axios.get('https://capstone2-api.herokuapp.com/favorites', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': userToken.token
@@ -20,7 +20,7 @@ const FavoriteMeals = () => {
             })
 
             if(response){
-                let requests = response.data.map(meal => fetch(`https://makeneat-express.herokuapp.com/meals/${meal.meal_id}`));
+                let requests = response.data.map(meal => fetch(`https://capstone2-api.herokuapp.com/meals/${meal.meal_id}`));
     
                 Promise.all(requests)
                 .then(responses => Promise.all(responses.map(res => res.json())))

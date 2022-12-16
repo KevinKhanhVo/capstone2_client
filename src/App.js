@@ -40,7 +40,7 @@ function App() {
   const handleFavorite = (method, meal_id) => {
     const options = {
       method: method,
-      url: `/favorites/${meal_id}`,
+      url: `https://capstone2-api.herokuapp.com/favorites/${meal_id}`,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': userToken.token

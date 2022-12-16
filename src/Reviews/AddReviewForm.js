@@ -24,7 +24,7 @@ const AddReviewForm = ({ meal_id }) => {
     }
 
     const handleSubmit = (e) => {
-        axios.post(`https://makeneat-express.herokuapp.com/reviews/${meal_id}`, 
+        axios.post(`https://capstone2-api.herokuapp.com/reviews/${meal_id}`, 
             {
                 comment: comment,
                 rating: selectedOption.value

@@ -10,7 +10,7 @@ const Review = ({ meal_id }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get(`https://makeneat-express.herokuapp.com/reviews/${meal_id}`)
+            axios.get(`https://capstone2-api.herokuapp.com/reviews/${meal_id}`)
             .then(response => setData(response.data));
         }
 
@@ -18,7 +18,7 @@ const Review = ({ meal_id }) => {
     }, [meal_id])
 
     const handleDelete = async () => {
-        axios.delete(`https://makeneat-express.herokuapp.com/reviews/${meal_id}`, 
+        axios.delete(`https://capstone2-api.herokuapp.com/reviews/${meal_id}`, 
         {
             headers: {
                 'Content-Type': 'application/json',

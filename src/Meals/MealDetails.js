@@ -18,7 +18,7 @@ const MealDetails = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get(`https://makeneat-express.herokuapp.com/meals/${id}`)
+            axios.get(`https://capstone2-api.herokuapp.com/meals/${id}`)
             .then(response => setData(response.data));
         }
 
