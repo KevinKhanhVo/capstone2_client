@@ -6,7 +6,7 @@ import "../css/Reviews.css"
 
 const Review = ({ meal_id }) => {
     const [data, setData] = useState([]);
-    const { username } = useContext(UserContext);
+    const { username, userToken } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,7 +22,7 @@ const Review = ({ meal_id }) => {
         {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': username.token
+                'Authorization': userToken.token
             }
         })
         .catch((error) => {
@@ -43,7 +43,7 @@ const Review = ({ meal_id }) => {
                             <p>{"⭐".repeat(review.rating)}</p>
                             <p>{review.comment}</p>
 
-                            {user && user.id === review.user_id ? 
+                            {username && username.id === review.user_id ? 
                                 <button onClick={handleDelete}>Remove</button>
                             :
                                 null

@@ -43,7 +43,7 @@ function App() {
       url: `/favorites/${meal_id}`,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': user ? user.token : "" 
+        'Authorization': userToken.token
       }
     }
 
