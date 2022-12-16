@@ -6,7 +6,7 @@ import "../css/Reviews.css"
 
 const Review = ({ meal_id }) => {
     const [data, setData] = useState([]);
-    const { user } = useContext(UserContext);
+    const { username } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,7 +22,7 @@ const Review = ({ meal_id }) => {
         {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': user.token
+                'Authorization': username.token
             }
         })
         .catch((error) => {

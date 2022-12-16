@@ -7,7 +7,7 @@ import "../css/UserForm.css";
 const UserLoginForm = () => {
     const [formData, setFormData] = useState({})
     const [formErrors, setFormErrors] = useState(null);
-    const { currentUser } = useContext(UserContext);
+    const { handleSetToken } = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -25,7 +25,7 @@ const UserLoginForm = () => {
         .then((response => {
             if(response.data.token){
                 navigate('/')
-                currentUser(response.data);
+                handleSetToken(response.data);
             }
         }))
         .catch((error) => {

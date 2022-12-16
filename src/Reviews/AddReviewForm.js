@@ -6,7 +6,7 @@ import UserContext from '../UserContext';
 import "../css/AddReviewForm.css";
 
 const AddReviewForm = ({ meal_id }) => {
-    const { user } = useContext(UserContext);
+    const { username } = useContext(UserContext);
 
     const options = [
         { value: '1', label: '1' },
@@ -32,7 +32,7 @@ const AddReviewForm = ({ meal_id }) => {
             {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': user.token
+                    'Authorization': username.token
                 }
             }
         )

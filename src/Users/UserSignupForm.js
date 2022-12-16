@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
+import UserContext from "../UserContext";
 import axios from 'axios';
 import "../css/UserForm.css";
 
@@ -7,6 +8,7 @@ const UserSignupForm = () => {
     const [formData, setFormData] = useState(null)
     const [formErrors, setFormErrors] = useState(null);
     const navigate = useNavigate();
+    const { handleSetToken } = useContext(UserContext);
 
     const handleChange = (e) => {
         const{ name, value} = e.target;
@@ -21,7 +23,8 @@ const UserSignupForm = () => {
 
         axios.post("https://makeneat-express.herokuapp.com/users/register", formData)
         .then(response => {
-            navigate('/users/login')
+            navigate('/')
+            handleSetToken(response.data);
         })
         .catch((error) => {
             setFormErrors(error.response.data.error.message)

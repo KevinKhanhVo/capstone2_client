@@ -8,14 +8,14 @@ import "../css/FavoriteMeals.css";
 const FavoriteMeals = () => {
     const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const { user, handleFavorite } = useContext(UserContext);
+    const { username, handleFavorite } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get('https://makeneat-express.herokuapp.com/favorites', {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': user ? user.token : "" 
+                    'Authorization': username ? username.token : "" 
                 }
             })
 

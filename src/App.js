@@ -9,23 +9,32 @@ import MealDetails from './Meals/MealDetails';
 import AllMeals from './Meals/AllMeals';
 import IngredientDetails from './Ingredients/IngredientDetails';
 import FavoriteMeals from './Meals/FavoriteMeals';
+import jwt_decode from "jwt-decode";
 import axios from 'axios';
 
 function App() {
-  const CURR_USER = JSON.parse(localStorage.getItem('user')) || null;
-  const [user, setUser] = useState(CURR_USER);
+  const CURR_TOKEN = JSON.parse(localStorage.getItem('token')) || null;
+
+  const [userToken, setUserToken] = useState(CURR_TOKEN);
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
-    localStorage.setItem('user', JSON.stringify(user))
-  }, [user])
+    if(userToken){
+      localStorage.setItem('token', JSON.stringify(userToken))
+      const { username } = jwt_decode(userToken.token);
+      setUsername(username);
+    }
 
-  const currentUser = (user) => {
-    setUser(user);
+  }, [userToken] )
+
+  const handleSetToken = (token) => {
+    setUserToken(token);
   }
 
   const logout = () => {
-    localStorage.removeItem('user');
-    setUser(null)
+    localStorage.removeItem('token');
+    setUsername(null);
+    setUserToken(null);
   }
 
   const handleFavorite = (method, meal_id) => {
@@ -51,7 +60,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={ { user, currentUser, logout, handleFavorite } } >
+        <UserContext.Provider value={ { username, userToken, handleSetToken, logout, handleFavorite } } >
           <Navbar/>
 
           <Routes>
