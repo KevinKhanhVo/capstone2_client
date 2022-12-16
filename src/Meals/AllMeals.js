@@ -18,7 +18,7 @@ const AllMeals = () => {
         }
 
         fetchData();
-    }, [])
+    }, [BASE_URL])
 
     const searchFilter = (data) => {
         setData(data);

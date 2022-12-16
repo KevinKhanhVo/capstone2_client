@@ -25,7 +25,7 @@ const MealDetails = () => {
         }
 
         fetchData();
-    }, [id])
+    }, [id, BASE_URL])
 
     return(
         <div className="MealDetails">
