@@ -29,7 +29,7 @@ const UserLoginForm = () => {
             }
         }))
         .catch((error) => {
-            setFormErrors(error.response.data.error.message)
+            setFormErrors(error.response.data.error.message);
         })
     }
 
