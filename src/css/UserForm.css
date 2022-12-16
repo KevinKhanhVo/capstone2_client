@@ -1,0 +1,42 @@
+.UserForm h1{
+    text-align: center;
+    padding: 20px;
+}
+
+.UserForm-container{
+    margin: auto;
+    width: 50%;
+}
+
+.UserForm-form{
+    background-color: #F0F0F0;
+    margin: auto;
+    padding: 40px;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.UserForm-form label {
+    display: block;
+    font-size: 18px;
+    width: 100%;
+}
+
+.UserForm-form input[type="text"], input[type="password"] {
+    padding: .5rem .8rem .5rem .8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.UserForm-button{
+    display: block;
+    float: right;
+}
+
+.UserForm-errors{
+    text-align: center;
+    font-size: 19px;
+    color: #FF5858;
+}

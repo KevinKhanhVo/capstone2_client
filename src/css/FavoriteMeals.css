@@ -1,0 +1,21 @@
+.FavoriteMeals{
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: repeat(3, auto);
+}
+
+.FavoriteMeals-grid{
+    padding: 20px;
+}
+
+.FavoriteMeals-button{
+    display: block;
+    margin: auto;
+    cursor: "pointer";
+}
+
+.FavoriteMeals-h1{
+    text-align: center;
+    padding: 20px;
+}

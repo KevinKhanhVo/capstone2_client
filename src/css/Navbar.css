@@ -1,0 +1,60 @@
+.Navbar {
+    overflow: hidden;
+    background-color: #dddddd;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+.Navbar-left{
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+}
+.Navbar-center{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: auto;
+
+}
+.Navbar-right{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  margin-left: auto; 
+  margin-right: 0;
+}
+  
+.Navbar button, span {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10%;
+}
+  
+.Navbar button:hover {
+  background-color: #373737;
+  color: white;
+  cursor: pointer;
+}
+
+.Navbar button {
+  color: black;
+  border: none;
+  background-color: #dddddd;
+}
+
+.MealSearchForm input{
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  margin-right: 10px;
+}
+
+.MealSearchForm label{
+  font-size: 20px;
+  color: #22A39F;
+  padding-right: 10px;
+}

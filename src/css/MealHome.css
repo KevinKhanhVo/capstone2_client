@@ -1,0 +1,16 @@
+.MealHome{
+    margin: auto;
+}
+
+.MealHome-header{
+    text-align: center;
+}
+
+.MealHome-h1{
+    padding-top: 60px;
+    font-size: 40px;
+}
+
+.MealHome-h4{
+    margin: 30px
+}

@@ -1,0 +1,12 @@
+.IngredientDetails-grid{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+.IngredientDetails-grid-elements{
+    margin: 20px;
+}
+

@@ -1,0 +1,9 @@
+.IngredientCard{
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+}
+
+.IngredientCard-name{
+    text-align: center;
+}

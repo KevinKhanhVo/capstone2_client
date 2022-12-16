@@ -1,0 +1,42 @@
+.MealDetails-grid{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+.MealDetails-left{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.MealDetails-right{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto;
+    
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.MealDetails-bottom-left{
+    padding-top: 20px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.MealDetails-bottom-right{
+    padding-top: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.MealDetails-h1{
+    text-align: center;
+    padding: 20px;
+}
