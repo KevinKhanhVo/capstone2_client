@@ -29,7 +29,7 @@ const FavoriteMeals = () => {
         }
 
         fetchData();
-    }, [user])
+    }, [userToken])
 
     return (
         <div>

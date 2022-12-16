@@ -51,7 +51,7 @@ const Review = ({ meal_id }) => {
                         </div>
                     ))}
                     </div>
-                    {user ? 
+                    {username ? 
                         <AddReviewForm meal_id={meal_id} />
                     :
                         null
