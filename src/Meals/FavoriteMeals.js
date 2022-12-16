@@ -8,7 +8,7 @@ import "../css/FavoriteMeals.css";
 const FavoriteMeals = () => {
     const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const { username, userToken, handleFavorite } = useContext(UserContext);
+    const { userToken, handleFavorite } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
