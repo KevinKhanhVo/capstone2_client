@@ -6,7 +6,7 @@ import UserContext from '../UserContext';
 import "../css/AddReviewForm.css";
 
 const AddReviewForm = ({ meal_id }) => {
-    const { username } = useContext(UserContext);
+    const { username, BASE_URL} = useContext(UserContext);
 
     const options = [
         { value: '1', label: '1' },
@@ -24,7 +24,7 @@ const AddReviewForm = ({ meal_id }) => {
     }
 
     const handleSubmit = (e) => {
-        axios.post(`https://capstone2-api.herokuapp.com/reviews/${meal_id}`, 
+        axios.post(`${BASE_URL}/reviews/${meal_id}`, 
             {
                 comment: comment,
                 rating: selectedOption.value

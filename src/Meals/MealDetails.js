@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MealCard from "./MealCard";
 import MealInstructions from "./MealInstruction";
 import IngredientList from "../Ingredients/IngredientList";
 import Reviews from "../Reviews/Review";
 import {useParams} from "react-router-dom";
+import UserContext from "../UserContext";
 import axios from "axios";
 import "../css/MealDetails.css"
 
@@ -15,10 +16,11 @@ import "../css/MealDetails.css"
 const MealDetails = () => {
     const { id } = useParams();
     const [data, setData] = useState(null);
+    const { BASE_URL } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get(`https://capstone2-api.herokuapp.com/meals/${id}`)
+            axios.get(`${BASE_URL}/meals/${id}`)
             .then(response => setData(response.data));
         }
 

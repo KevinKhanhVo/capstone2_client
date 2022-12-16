@@ -11,8 +11,10 @@ import IngredientDetails from './Ingredients/IngredientDetails';
 import FavoriteMeals from './Meals/FavoriteMeals';
 import jwt_decode from "jwt-decode";
 import axios from 'axios';
+import "./css/App.css";
 
 function App() {
+  const BASE_URL = "https://capstone2-api.herokuapp.com";
   const CURR_TOKEN = JSON.parse(localStorage.getItem('token')) || null;
 
   const [userToken, setUserToken] = useState(CURR_TOKEN);
@@ -40,7 +42,7 @@ function App() {
   const handleFavorite = (method, meal_id) => {
     const options = {
       method: method,
-      url: `https://capstone2-api.herokuapp.com/favorites/${meal_id}`,
+      url: `${BASE_URL}/favorites/${meal_id}`,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': userToken.token
@@ -60,7 +62,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={ { username, userToken, handleSetToken, logout, handleFavorite } } >
+        <UserContext.Provider value={ { username, userToken, handleSetToken, logout, handleFavorite, BASE_URL } } >
           <Navbar/>
 
           <Routes>

@@ -6,11 +6,11 @@ import "../css/Reviews.css"
 
 const Review = ({ meal_id }) => {
     const [data, setData] = useState([]);
-    const { username, userToken } = useContext(UserContext);
+    const { username, userToken, BASE_URL } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get(`https://capstone2-api.herokuapp.com/reviews/${meal_id}`)
+            axios.get(`/reviews/${meal_id}`)
             .then(response => setData(response.data));
         }
 
@@ -18,7 +18,7 @@ const Review = ({ meal_id }) => {
     }, [meal_id])
 
     const handleDelete = async () => {
-        axios.delete(`https://capstone2-api.herokuapp.com/reviews/${meal_id}`, 
+        axios.delete(`${BASE_URL}/reviews/${meal_id}`, 
         {
             headers: {
                 'Content-Type': 'application/json',

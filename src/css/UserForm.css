@@ -1,28 +1,50 @@
+.UserSignupForm, .UserLoginForm{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: hsl(34, 53%, 82%);
+    background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,
+    hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+    hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,
+    hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+    hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+    hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px
+    ),
+    repeating-linear-gradient(135deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,
+    hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
+    hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,
+    hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px,
+    hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px,
+    hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, 0.5) 140px, hsla(197, 62%, 11%, 0.5) 160px
+    );
+}
+
+.UserForm{
+    width: 20%;
+    min-width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 10px 5px 5px #520404;
+    background-color: white;
+    border: 2px solid #CF0A0A;
+}
+
+.UserForm-form{
+    min-height: 250px;
+}
+
 .UserForm h1{
     text-align: center;
     padding: 20px;
 }
 
-.UserForm-container{
-    margin: auto;
-    width: 50%;
-}
-
-.UserForm-form{
-    background-color: #F0F0F0;
-    margin: auto;
-    padding: 40px;
-    width: 30%;
-    border: 1px solid black;
-}
-
-.UserForm-form label {
+.UserForm label{
     display: block;
-    font-size: 18px;
-    width: 100%;
 }
 
-.UserForm-form input[type="text"], input[type="password"] {
+.UserForm-form input[type="text"], .UserForm-form input[type="password"] {
     padding: .5rem .8rem .5rem .8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -34,6 +56,23 @@
     display: block;
     float: right;
 }
+
+.UserForm-button{
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: #CF0A0A;
+    border: 2px solid #CF0A0A;
+}
+
+.UserForm-button:hover{
+    background-color: #CF0A0A;
+    color: white;
+}
+
 
 .UserForm-errors{
     text-align: center;

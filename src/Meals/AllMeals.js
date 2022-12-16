@@ -9,11 +9,11 @@ import "../css/AllMeals.css";
 const AllMeals = () => {
     const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const { handleFavorite } = useContext(UserContext);
+    const { handleFavorite, BASE_URL } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get("https://capstone2-api.herokuapp.com/meals")
+            axios.get(BASE_URL + "/meals")
             .then(response => setData(response.data));
         }
 
@@ -57,7 +57,6 @@ const AllMeals = () => {
 
                 <h1 className="AllMeals-h1">Loading meals 🍖 ...</h1>
             }
-            
         </div>
     )
 }

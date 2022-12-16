@@ -1,6 +1,5 @@
 .Navbar {
     overflow: hidden;
-    background-color: #dddddd;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -28,23 +27,19 @@
   color: black;
   text-align: center;
   padding: 10px;
-  margin: 15px;
+  margin: 10px;
   text-decoration: none;
   font-size: 20px;
-  border-radius: 10%;
+  border: none;
+  background-color: #C2B280;
 }
   
 .Navbar button:hover {
-  background-color: #373737;
+  background-color: #CF0A0A;
   color: white;
   cursor: pointer;
 }
 
-.Navbar button {
-  color: black;
-  border: none;
-  background-color: #dddddd;
-}
 
 .MealSearchForm input{
   padding: 6px;

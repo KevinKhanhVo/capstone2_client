@@ -8,11 +8,11 @@ import "../css/FavoriteMeals.css";
 const FavoriteMeals = () => {
     const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const { userToken, handleFavorite } = useContext(UserContext);
+    const { userToken, handleFavorite, BASE_URL } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get('https://capstone2-api.herokuapp.com/favorites', {
+            const response = await axios.get(`${BASE_URL}/favorites`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': userToken.token
@@ -20,7 +20,7 @@ const FavoriteMeals = () => {
             })
 
             if(response){
-                let requests = response.data.map(meal => fetch(`https://capstone2-api.herokuapp.com/meals/${meal.meal_id}`));
+                let requests = response.data.map(meal => fetch(`${BASE_URL}/meals/${meal.meal_id}`));
     
                 Promise.all(requests)
                 .then(responses => Promise.all(responses.map(res => res.json())))

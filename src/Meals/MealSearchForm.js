@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../UserContext";
 import axios from 'axios';
 
 const MealSearchForm = ({ searchFilter }) => {
+    const { BASE_URL } = useContext(UserContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         let search = e.target.name.value === "" ? "" : `?name=${e.target.name.value}`;
 
-        axios.get("https://capstone2-api.herokuapp.com/meals" + search)
+        axios.get(`${BASE_URL}/meals` + search)
             .then(response => searchFilter(response.data))
     }
     
