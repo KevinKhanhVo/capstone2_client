@@ -6,7 +6,7 @@ import UserContext from '../UserContext';
 import "../css/AddReviewForm.css";
 
 const AddReviewForm = ({ meal_id }) => {
-    const { username, BASE_URL} = useContext(UserContext);
+    const { username, userToken, BASE_URL} = useContext(UserContext);
 
     const options = [
         { value: '1', label: '1' },
@@ -24,7 +24,7 @@ const AddReviewForm = ({ meal_id }) => {
     }
 
     const handleSubmit = (e) => {
-        axios.post(`${BASE_URL}/reviews/${meal_id}`, 
+        axios.post(`${BASE_URL}/reviews/${username}/${meal_id}`, 
             {
                 comment: comment,
                 rating: selectedOption.value
@@ -32,7 +32,7 @@ const AddReviewForm = ({ meal_id }) => {
             {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': username.token
+                    'Authorization': userToken.token
                 }
             }
         )

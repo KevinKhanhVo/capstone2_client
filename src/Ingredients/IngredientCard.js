@@ -18,8 +18,8 @@ const IngredientCard = ({ prep }) => {
                             <img 
                                 src={`${ingredient_img_url}${key}.png`}
                                 alt={key}
-                                width="175px"
-                                height="175px"
+                                width="125px"
+                                height="125px"
                             />
                         </div>
                         <p>{prep[key]}</p>

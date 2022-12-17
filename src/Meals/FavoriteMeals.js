@@ -8,11 +8,11 @@ import "../css/FavoriteMeals.css";
 const FavoriteMeals = () => {
     const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const { userToken, handleFavorite, BASE_URL } = useContext(UserContext);
+    const { username, userToken, handleFavorite, BASE_URL } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get(`${BASE_URL}/favorites`, {
+            const response = await axios.get(`${BASE_URL}/favorites/${username}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': userToken.token
@@ -29,7 +29,7 @@ const FavoriteMeals = () => {
         }
 
         fetchData();
-    }, [userToken, BASE_URL])
+    }, [userToken, BASE_URL, username])
 
     return (
         <div>

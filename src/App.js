@@ -19,7 +19,7 @@ function App() {
   // const BASE_URL = "http://localhost:3001";
 
   //For production.
-  const BASE_URL = "https://capstone2-api.herokuapp.com";
+  const BASE_URL = "https://capstone2-api.herokuapp.com"; 
 
   const CURR_TOKEN = JSON.parse(localStorage.getItem('token')) || null;
 
@@ -48,7 +48,7 @@ function App() {
   const handleFavorite = (method, meal_id) => {
     const options = {
       method: method,
-      url: `${BASE_URL}/favorites/${meal_id}`,
+      url: `${BASE_URL}/favorites/${username}/${meal_id}`,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': userToken.token
@@ -56,19 +56,20 @@ function App() {
     }
 
     axios(options).then(response => {
-        alert(response.data.message);
+        // alert(response.data.message);
+        console.log(response.data);
     })
     .catch((error) => {
         if(error.response){
-            alert(error.response.data.message)
-      }
+          console.log(error);
+        }
     })
   }
 
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={ { username, userToken, handleSetToken, logout, handleFavorite, BASE_URL } } >
+        <UserContext.Provider value={{ username, userToken, handleSetToken, logout, handleFavorite, BASE_URL }} >
           <Navbar/>
 
           <Routes>
@@ -79,7 +80,7 @@ function App() {
             <Route exact path="/meals/:id" element={<MealDetails handleFavorite={handleFavorite} />} />
             <Route exact path="/ingredients/:name" element={<IngredientDetails />} />
 
-            <Route path="/favorites/" element={
+            <Route path="/favorites" element={
               <PrivateRoute username={username}>
                 <FavoriteMeals />
               </PrivateRoute>

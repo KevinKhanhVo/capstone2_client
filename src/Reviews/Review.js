@@ -18,7 +18,7 @@ const Review = ({ meal_id }) => {
     }, [meal_id, BASE_URL])
 
     const handleDelete = async () => {
-        axios.delete(`${BASE_URL}/reviews/${meal_id}`, 
+        axios.delete(`${BASE_URL}/reviews/${username}/${meal_id}`, 
         {
             headers: {
                 'Content-Type': 'application/json',

@@ -33,7 +33,6 @@ const MealDetails = () => {
                 <div>
                     <div className="MealDetails-profile">
                         <img 
-                            style={{borderRadius: "20px"}}
                             src={data.meals[0].strMealThumb}
                             alt={data.meals[0].strMeal}
                             width="750px"

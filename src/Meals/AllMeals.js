@@ -9,7 +9,7 @@ import "../css/AllMeals.css";
 const AllMeals = () => {
     const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const { handleFavorite, BASE_URL } = useContext(UserContext);
+    const { username, handleFavorite, BASE_URL } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -43,7 +43,11 @@ const AllMeals = () => {
                                 >
                                     <MealCard key={meal.idMeal} name={meal.strMeal} image={meal.strMealThumb} />
                                 </div>
-                                <button className="AllMeals-button" onClick={() => handleFavorite('POST', meal.idMeal)}>Favorite</button>
+                                { username ? 
+                                    <button className="AllMeals-button" onClick={() => handleFavorite('POST', meal.idMeal)}>Favorite</button>
+                                :
+                                    null
+                                }
                             </div>
                         ))}
                         </div>
