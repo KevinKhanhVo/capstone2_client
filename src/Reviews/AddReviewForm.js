@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Button, Form, Label, Input } from 'reactstrap';
+import {Form, Label, Input } from 'reactstrap';
 import axios from 'axios';
 import Select from 'react-select'
 import UserContext from '../UserContext';
@@ -44,38 +44,36 @@ const AddReviewForm = ({ meal_id }) => {
     }
 
     return (
-        <>
         <div className="AddReviewForm">
-        <h4>Add a new review</h4>
-        <Form 
-            className="AddReviewForm-form"
-            onSubmit={handleSubmit}
-        >
-            <div className="AddReviewForm-comp">
-                <Label for="rating">Select rating</Label>
-                <Select 
-                    className="basic-single"
-                    options={options} 
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                />
-            </div>
-            
-            <div className="AddReviewForm-comp">
-                <Label for="comment">Comment</Label>
-                <Input
-                    id="comment"
-                    name="comment"
-                    type="textarea"
-                    value={comment}
-                    onChange={handleOnChange}
-                />
-            </div>
-            
-            <Button>Add</Button>
-        </Form>
+            <h4>Add a new review</h4>
+            <Form 
+                className="AddReviewForm-form"
+                onSubmit={handleSubmit}
+            >
+                <div className="AddReviewForm-comp">
+                    <Label for="rating">Select rating</Label>
+                    <Select 
+                        className="basic-single"
+                        options={options} 
+                        defaultValue={selectedOption}
+                        onChange={setSelectedOption}
+                    />
+                </div>
+                
+                <div className="AddReviewForm-comp">
+                    <Label for="comment">Comment</Label>
+                    <Input
+                        id="comment"
+                        name="comment"
+                        type="textarea"
+                        value={comment}
+                        onChange={handleOnChange}
+                    />
+                </div>
+                
+                <button className="AddReviewForm-button">Submit</button>
+            </Form>
         </div>
-        </>
     );
   }
 

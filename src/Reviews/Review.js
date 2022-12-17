@@ -10,12 +10,12 @@ const Review = ({ meal_id }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get(`/reviews/${meal_id}`)
+            axios.get(`${BASE_URL}/reviews/${meal_id}`)
             .then(response => setData(response.data));
         }
 
         fetchData();
-    }, [meal_id])
+    }, [meal_id, BASE_URL])
 
     const handleDelete = async () => {
         axios.delete(`${BASE_URL}/reviews/${meal_id}`, 
@@ -37,19 +37,27 @@ const Review = ({ meal_id }) => {
             {data ?
                 <div>
                     <div className="Reviews">
-                    {data.map(review => (
-                        <div key={review.id} className="Reviews-each">
-                            <b style={{ textTransform: 'capitalize'}}>{review.firstname} {review.lastname}</b>
-                            <p>{"⭐".repeat(review.rating)}</p>
-                            <p>{review.comment}</p>
+                    <h1 style={{borderBottom: "1px solid black"}}>Reviews</h1>
+                    
 
-                            {username && username.id === review.user_id ? 
-                                <button onClick={handleDelete}>Remove</button>
-                            :
-                                null
-                            }
-                        </div>
-                    ))}
+                    {data.length === 0 ? 
+                        <p>No reviews</p>
+                    :
+                        data.map(review => (
+                            <div key={review.id} className="Reviews-each">
+                                <b style={{ textTransform: 'capitalize'}}>{review.firstname} {review.lastname}</b>
+                                <p>{"⭐".repeat(review.rating)}</p>
+                                <p>{review.comment}</p>
+
+                                {username && username.id === review.user_id ? 
+                                    <button onClick={handleDelete}>Remove</button>
+                                :
+                                    null
+                                }
+                            </div>
+                        ))
+                    }
+
                     </div>
                     {username ? 
                         <AddReviewForm meal_id={meal_id} />
