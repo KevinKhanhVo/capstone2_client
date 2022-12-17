@@ -56,12 +56,11 @@ function App() {
     }
 
     axios(options).then(response => {
-        // alert(response.data.message);
-        console.log(response.data);
+        alert(response.data.message);
     })
     .catch((error) => {
         if(error.response){
-          console.log(error);
+          alert(response.data.message);
         }
     })
   }
