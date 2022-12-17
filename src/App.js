@@ -16,10 +16,10 @@ import "./css/App.css";
 
 function App() {
   //For testing.
-  // const BASE_URL = "http://localhost:3001";
+  const BASE_URL = "http://localhost:3001";
 
   //For production.
-  const BASE_URL = "https://capstone2-api.herokuapp.com"; 
+  // const BASE_URL = "https://capstone2-api.herokuapp.com"; 
 
   const CURR_TOKEN = JSON.parse(localStorage.getItem('token')) || null;
 
@@ -56,12 +56,11 @@ function App() {
     }
 
     axios(options).then(response => {
-        alert(response.data.message);
-    })
-    .catch((error) => {
-        if(error.response){
-          alert(response.data.message);
-        }
+      alert(response.data.message)
+    }).catch((error) => {
+      if(error.response){
+        alert(error.response.data.error.message);
+      }
     })
   }
 
