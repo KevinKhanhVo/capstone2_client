@@ -1,7 +1,7 @@
 .IngredientList{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    width: 70%;
+    width: 80%;
     margin: auto;
     margin-top: 125px;
     grid-gap: 60px;

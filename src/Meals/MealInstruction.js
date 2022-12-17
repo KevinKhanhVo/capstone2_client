@@ -7,6 +7,7 @@ const MealInstructions = ({ meal }) => {
 
     return(
         <div className="MealInstructions">
+            <h1 style={{borderBottom: "1px solid black"}}>Instructions</h1>
             {subString.map(string => (<p>{string}</p>))}
         </div>
     )

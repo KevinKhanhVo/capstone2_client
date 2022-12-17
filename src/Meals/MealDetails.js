@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import MealCard from "./MealCard";
 import MealInstructions from "./MealInstruction";
 import MealDescription from "./MealDescription";
 import IngredientList from "../Ingredients/IngredientList";
@@ -36,6 +35,7 @@ const MealDetails = () => {
                         <img 
                             style={{borderRadius: "20px"}}
                             src={data.meals[0].strMealThumb}
+                            alt={data.meals[0].strMeal}
                             width="750px"
                             height="600px"
                         />
