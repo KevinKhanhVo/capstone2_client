@@ -13,11 +13,7 @@ const Navbar = () => {
             <div className="Navbar-left">
                 <button className="active" onClick={() => {navigate(`/`)}}>HOME</button>
                 <button onClick={() => {navigate(`/meals`)}}>MEALS</button>
-                {username ? 
-                    <button onClick={() => {navigate(`/favorites`)}}>FAVORITES</button> 
-                    :
-                    "" 
-                }
+                <button onClick={() => {navigate(`/favorites`)}}>FAVORITES</button> 
             </div>
             {!username ? 
                 <div className="Navbar-right">

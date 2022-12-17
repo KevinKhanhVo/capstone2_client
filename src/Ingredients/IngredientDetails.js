@@ -23,8 +23,6 @@ const IngredientDetails = () => {
         fetchData();
     }, [name])
 
-    console.log(data);
-    
     return(
       <div className="IngredientDetails">
         {data ?

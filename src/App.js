@@ -9,6 +9,7 @@ import MealDetails from './Meals/MealDetails';
 import AllMeals from './Meals/AllMeals';
 import IngredientDetails from './Ingredients/IngredientDetails';
 import FavoriteMeals from './Meals/FavoriteMeals';
+import PrivateRoute from './PrivateRoute';
 import jwt_decode from "jwt-decode";
 import axios from 'axios';
 import "./css/App.css";
@@ -77,7 +78,12 @@ function App() {
             <Route exact path="/meals/" element={<AllMeals handleFavorite={handleFavorite} />}/>
             <Route exact path="/meals/:id" element={<MealDetails handleFavorite={handleFavorite} />} />
             <Route exact path="/ingredients/:name" element={<IngredientDetails />} />
-            <Route exact path="/favorites/" element={<FavoriteMeals /> } />
+
+            <Route path="/favorites/" element={
+              <PrivateRoute username={username}>
+                <FavoriteMeals />
+              </PrivateRoute>
+            } />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>   
         </UserContext.Provider>

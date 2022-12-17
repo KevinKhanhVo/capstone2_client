@@ -1,5 +1,6 @@
 import React from "react";
 import IngredientCard from "./IngredientCard"
+import "../css/IngredientList.css";
 
 const IngredientList = ({ meal}) => {
     let ingredients = [];
@@ -20,9 +21,9 @@ const IngredientList = ({ meal}) => {
       }, {});
 
     return(
-        <>
+        <div className="IngredientList">
             <IngredientCard prep={mealObj} />
-        </>
+        </div>
     )
 }
 
