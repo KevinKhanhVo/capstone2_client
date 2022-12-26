@@ -1,5 +1,8 @@
 # Make N' Eat
 
+## URL Link
+https://makeneat.netlify.app/
+
 ## Overview
 On landing page, user will be able to view recipes, instructions and ingredients of meals. 
 They are able to access basic features as a non-registered user such searching and viewing
