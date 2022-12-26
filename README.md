@@ -12,7 +12,7 @@ React, Express, PostgreSQL
 https://www.themealdb.com/api.php?ref=apilist.fun
 
 ## Tests
-Tests are located in folder __tests__
+Tests are located in folder __ tests __
 ```bash
 $ createdb capstone2_test
 $ psql capstone2_test < capstone2.sql
@@ -20,7 +20,8 @@ $ npm test --runInBand
 ```
 
 ## DB Schema
-![db_schema](https://user-images.githubusercontent.com/92338813/206578616-1d3e5924-b396-4bd0-bcf1-21d7e5bf541d.jpg)
+![Screenshot_20221226_050016](https://user-images.githubusercontent.com/92338813/209587571-27699149-dcea-4444-8c7b-f63c515d1690.png)
+
 
 ## Sensitive Information
 Passwords are secured using Node Bcrypt. Non-registered users will not be able to access a favorite page and to add a meal review. However, they are able to access basic features such as searching, viewing meals and reviews.
