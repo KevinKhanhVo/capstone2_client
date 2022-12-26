@@ -12,8 +12,12 @@ React, Express, PostgreSQL
 https://www.themealdb.com/api.php?ref=apilist.fun
 
 ## Tests
-folder: __tests__
-run: npm run test
+Tests are located in folder __tests__
+```bash
+$ createdb capstone2_test
+$ psql capstone2_test < capstone2.sql
+$ npm test --runInBand
+```
 
 ## DB Schema
 ![db_schema](https://user-images.githubusercontent.com/92338813/206578616-1d3e5924-b396-4bd0-bcf1-21d7e5bf541d.jpg)
