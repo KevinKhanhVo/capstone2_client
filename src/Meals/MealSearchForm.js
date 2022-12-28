@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "../UserContext";
 import axios from 'axios';
+import "../css/MealSearchForm.css"
 
 const MealSearchForm = ({ searchFilter }) => {
     const { BASE_URL } = useContext(UserContext);
@@ -14,14 +15,14 @@ const MealSearchForm = ({ searchFilter }) => {
     }
     
     return (
-        <form className="CompanySearchFilter" onSubmit={handleSubmit}>
+        <form className="MealSearchForm" onSubmit={handleSubmit}>
             <input
                 id="name"
                 name="name"
                 placeholder="meal name"
                 type="text"
             />
-            <button>Search</button>
+            <button className="MealSearchForm-button">Search</button>
         </form>
     );
   }
