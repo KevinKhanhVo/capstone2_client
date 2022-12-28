@@ -13,6 +13,13 @@
     display: block;
     margin: auto;
     cursor: "pointer";
+    font-size: 25px;
+    background: none;
+    border: none;
+}
+
+.FavoriteMeals-button:hover{
+    border: 1px solid black;
 }
 
 .FavoriteMeals-h1{

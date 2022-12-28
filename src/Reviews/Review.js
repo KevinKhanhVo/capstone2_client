@@ -50,7 +50,7 @@ const Review = ({ meal_id }) => {
                                 <p>{review.comment}</p>
 
                                 {username && username.id === review.user_id ? 
-                                    <button onClick={handleDelete}>Remove</button>
+                                    <button className="Reviews-button" onClick={handleDelete}>Remove</button>
                                 :
                                     null
                                 }
@@ -60,7 +60,9 @@ const Review = ({ meal_id }) => {
 
                     </div>
                     {username ? 
-                        <AddReviewForm meal_id={meal_id} />
+                        <div className="Reviews-addForm">
+                            <AddReviewForm meal_id={meal_id} />
+                        </div>
                     :
                         null
                     }

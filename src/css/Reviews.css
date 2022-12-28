@@ -1,5 +1,5 @@
 .Reviews{
-    width: 50%;
+    width: 75%;
     margin: auto;
     margin-top: 150px;
     font-size: 18px;
@@ -8,4 +8,18 @@
 .Reviews-each{
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.Reviews-button{
+    font-size: 15px;
+    padding: 5px;
+    background-color: #CF0A0A;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.Reviews-addForm{
+    width: 50%;
+    margin: auto;
 }

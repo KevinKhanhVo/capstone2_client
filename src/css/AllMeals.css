@@ -10,11 +10,23 @@
     padding: 20px;
 }
 
-.AllMeals-button{
+.AllMeals-favorite, .AllMeals-unfavorite{
     display: block;
     margin: auto;
     cursor: "pointer";
+    font-size: 25px;
+    background: none;
+    border: none;
 }
+
+.AllMeals-favorite:hover{
+    border: 1px solid red;
+}
+
+.AllMeals-unfavorite:hover{
+    border: 1px solid black;
+}
+
 
 .AllMeals-search{
     text-align: center;

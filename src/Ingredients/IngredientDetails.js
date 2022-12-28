@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import MealCard from "../Meals/MealCard";
+import UserContext from "../UserContext";
 import "../css/IngredientDetails.css"
 
 /**
@@ -13,21 +14,22 @@ const IngredientDetails = () => {
     const { name } = useParams();
     const [data, setData] = useState(null);
     const navigate = useNavigate();
+    const { BASE_URL } = useContext(UserContext);
 
     useEffect(() => {
         const fetchData = async () => {
-            axios.get(`https://makeneat-express.herokuapp.com/ingredients/${name}`)
+            axios.get(`${BASE_URL}/ingredients/${name}`)
             .then(response => setData(response.data));
         }
 
         fetchData();
-    }, [name])
+    }, [BASE_URL, name])
 
     return(
       <div className="IngredientDetails">
         {data ?
             <div>
-                <h1 style={{textAlign: "center"}}>{`Meals using ${name}`}</h1>
+                <p className="IngredientDetails-header">Recipes with <b>{name}</b></p>
                 <div className="IngredientDetails-grid">
                     {data.meals.map(meal => 
                     <div 
@@ -42,7 +44,7 @@ const IngredientDetails = () => {
                 </div>
             </div>
         :
-            <h1 className="IngredientDetails-h1">Loading meals 🍖 ...</h1>
+            <h1 style={{textAlign: "center"}} className="IngredientDetails-h1">Loading meals 🍖 ...</h1>
         }
       </div>
     )

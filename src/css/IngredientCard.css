@@ -1,7 +1,7 @@
 .IngredientCard{
     margin: auto;
     text-align: center;
-    background-color: #FEBE8C;
+    border: 2px solid #FEBE8C;
     width: 100%;
     padding: 10px 0 10px 0;
     cursor:pointer;
@@ -10,6 +10,10 @@
 .IngredientCard-name{
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #FEBE8C;
     font-weight: bold;
+}
+
+.IngredientCard-prep{
+    border-top: 2px solid #FEBE8C;
 }

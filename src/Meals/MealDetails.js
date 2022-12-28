@@ -35,8 +35,8 @@ const MealDetails = () => {
                         <img 
                             src={data.meals[0].strMealThumb}
                             alt={data.meals[0].strMeal}
-                            width="750px"
-                            height="600px"
+                            width="600px"
+                            height="550px"
                         />
                         <div className="MealDetails-child">
                             <MealDescription

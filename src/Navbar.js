@@ -11,9 +11,9 @@ const Navbar = () => {
     return (
         <div className="Navbar">
             <div className="Navbar-left">
-                <button className="active" onClick={() => {navigate(`/`)}}>HOME</button>
-                <button onClick={() => {navigate(`/meals`)}}>MEALS</button>
-                <button onClick={() => {navigate(`/favorites`)}}>FAVORITES</button> 
+                <button className="active" onClick={() => {navigate(`/`)}}>Home</button>
+                <button onClick={() => {navigate(`/meals`)}}>Meals</button>
+                <button onClick={() => {navigate(`/favorites`)}}>Favorites</button> 
             </div>
             {!username ? 
                 <div className="Navbar-right">

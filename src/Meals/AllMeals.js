@@ -8,8 +8,10 @@ import "../css/AllMeals.css";
 
 const AllMeals = () => {
     const [data, setData] = useState(null);
+    const [favorite, setFavorite] = useState(null);
     const navigate = useNavigate();
-    const { username, handleFavorite, BASE_URL } = useContext(UserContext);
+    const { username, handleFavorite, BASE_URL, favoriteData } = useContext(UserContext);
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,8 +19,13 @@ const AllMeals = () => {
             .then(response => setData(response.data));
         }
 
+        const fetchFavorites = async () => {
+            await setFavorite(favoriteData.map(meal => meal.meals[0].idMeal));
+        }
+
         fetchData();
-    }, [BASE_URL])
+        fetchFavorites();
+    }, [BASE_URL, favoriteData])
 
     const searchFilter = (data) => {
         setData(data);
@@ -44,7 +51,10 @@ const AllMeals = () => {
                                     <MealCard key={meal.idMeal} name={meal.strMeal} image={meal.strMealThumb} />
                                 </div>
                                 { username ? 
-                                    <button className="AllMeals-button" onClick={() => handleFavorite('POST', meal.idMeal)}>Favorite</button>
+                                    favorite.includes(meal.idMeal) ?
+                                        <button className="AllMeals-unfavorite" onClick={() => handleFavorite('DELETE', meal.idMeal)}>🤍</button>
+                                    :
+                                        <button className="AllMeals-favorite" onClick={() => handleFavorite('POST', meal.idMeal)}>❤️</button>
                                 :
                                     null
                                 }

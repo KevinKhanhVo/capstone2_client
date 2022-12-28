@@ -25,6 +25,7 @@ function App() {
 
   const [userToken, setUserToken] = useState(CURR_TOKEN);
   const [username, setUsername] = useState(null);
+  const [favoriteData, setFavoriteData] = useState(null);
 
   useEffect(() => {
     if(userToken){
@@ -33,7 +34,30 @@ function App() {
       setUsername(username);
     }
 
-  }, [userToken] )
+  }, [userToken])
+
+  useEffect(() => {
+    if(userToken){
+      const fetchData = async () => {
+        const response = await axios.get(`${BASE_URL}/favorites/${username}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': userToken.token
+            }
+        })
+
+        if(response){
+            let requests = response.data.map(meal => fetch(`${BASE_URL}/meals/${meal.meal_id}`));
+
+            Promise.all(requests)
+            .then(responses => Promise.all(responses.map(res => res.json())))
+            .then(response => setFavoriteData(response));
+        }
+      }
+      fetchData();
+    }
+
+}, [userToken, BASE_URL, username])
 
   const handleSetToken = (token) => {
     setUserToken(token);
@@ -67,7 +91,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <UserContext.Provider value={{ username, userToken, handleSetToken, logout, handleFavorite, BASE_URL }} >
+        <UserContext.Provider value={{ username, userToken, handleSetToken, logout, handleFavorite, BASE_URL, favoriteData }} >
           <Navbar/>
 
           <Routes>

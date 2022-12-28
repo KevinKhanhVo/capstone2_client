@@ -22,7 +22,9 @@ const IngredientCard = ({ prep }) => {
                                 height="125px"
                             />
                         </div>
-                        <p>{prep[key]}</p>
+                        <div className="IngredientCard-prep">
+                            <p>{prep[key]}</p>
+                        </div>
                     </div>   
                 )
             })}

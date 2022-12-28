@@ -6,9 +6,11 @@ const MealFront = () => {
         <div className="MealFront">
             <div className="MealFront-img"></div>
             <div className="MealFront-header">
-                <h1 style={{marginBottom: "50px"}}>Make N' Eat</h1>
-                <h5>View different recipes and instructions on how to prep them.</h5>
-                <p>More than hundreds of recipes and ingredients for prepped meals!</p>
+                <h1 className="MealFront-h1">Make N' Eat</h1>
+                <div className="MealFront-p">
+                    <p>View meal recipes with instructions.</p>
+                    <p>More than a hundred recipes all over the world. </p>
+                </div>
             </div>
         </div>
     )

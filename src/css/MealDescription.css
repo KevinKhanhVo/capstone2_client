@@ -1,0 +1,26 @@
+.MealDescription{
+    text-align: center;
+}
+
+.MealDescription-h1{
+    font-size: 45px;
+}
+
+.MealDescription-p{
+    padding: 5px 0 0 0;
+    font-size: 20px;
+}
+
+.MealDescription-tag{
+    font-size: 18px;
+}
+
+.MealDescription-button{
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #CF0A0A;
+    color: white;
+    cursor: pointer;
+    border: none;
+}

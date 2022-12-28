@@ -1,3 +1,9 @@
+.IngredientDetails-header{
+    font-size: 40px;
+    text-align: center;
+}
+
+
 .IngredientDetails-grid{
     width: 80%;
     margin: auto;

@@ -14,8 +14,15 @@
   text-align: center;
   padding-top: 40px;
   height: 300px;
-  width: 800px;
+  width: 600px;
   color: white;
-  background-color: #202020;
-  opacity: 0.7;
+  background: rgba(50, 50, 120, 0.8);
+}
+
+.MealFront-h1{
+  margin-bottom: 50px;
+}
+
+.MealFront-p{
+  font-size: 20px;
 }

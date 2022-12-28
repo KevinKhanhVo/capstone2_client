@@ -1,44 +1,21 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import MealCard from './MealCard';
 import { useNavigate } from 'react-router-dom';
 import UserContext from "../UserContext";
-import axios from 'axios';
 import "../css/FavoriteMeals.css";
 
 const FavoriteMeals = () => {
-    const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const { username, userToken, handleFavorite, BASE_URL } = useContext(UserContext);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await axios.get(`${BASE_URL}/favorites/${username}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': userToken.token
-                }
-            })
-
-            if(response){
-                let requests = response.data.map(meal => fetch(`${BASE_URL}/meals/${meal.meal_id}`));
-    
-                Promise.all(requests)
-                .then(responses => Promise.all(responses.map(res => res.json())))
-                .then(response => setData(response));
-            }
-        }
-
-        fetchData();
-    }, [userToken, BASE_URL, username])
+    const { handleFavorite, favoriteData } = useContext(UserContext);
 
     return (
         <div>
-            {data ? 
-                data.length === 0 ? 
+            {favoriteData ? 
+                favoriteData.length === 0 ? 
                     <h1 style={{textAlign: "center"}}>No favorite meals</h1>
                 :
                     <div  className="FavoriteMeals">
-                    {data.map(meal =>
+                    {favoriteData.map(meal =>
                         <div>
                             <div 
                                 className="FavoriteMeals-grid" key={meal.meals[0].idMeal}
@@ -46,7 +23,7 @@ const FavoriteMeals = () => {
                             >
                                 <MealCard key={meal.meals[0].idMeal} name={meal.meals[0].strMeal} image={meal.meals[0].strMealThumb} />
                             </div>
-                            <button className="FavoriteMeals-button" onClick={() => handleFavorite('DELETE', meal.meals[0].idMeal)}>Unfavorite</button>
+                            <button className="FavoriteMeals-button" onClick={() => handleFavorite('DELETE', meal.meals[0].idMeal)}>🤍</button>
                         </div>
                     )}
                     </div>

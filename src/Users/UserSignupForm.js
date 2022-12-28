@@ -28,6 +28,7 @@ const UserSignupForm = () => {
         })
         .catch((error) => {
             setFormErrors(error.response.data.error.message)
+            console.log(error);
         })
     }
 

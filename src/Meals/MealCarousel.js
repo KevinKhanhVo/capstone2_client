@@ -9,24 +9,25 @@ const MealCarousel = () => {
     const navigate = useNavigate();
 
     return(
-        <div className="MealCarousel">
-            <Carousel autoPlay infiniteLoop>
-                {initial_meals.map(meal => 
-                    <div 
-                        style={{cursor: "pointer"}}
-                        key={meal.id}
-                        onClick={() => {navigate(`meals/${meal.id}`)}} 
-                    >
-                        <img 
-                            src={meal.img} 
-                            alt={meal.name} 
-                            width="100%" height="auto" />
-                        <p className="legend">{meal.name}</p>
-                    </div>
-                )}
-            </Carousel>
-        </div>
-        
+        <Carousel className="Carousel" autoPlay infiniteLoop>
+            {initial_meals.map(meal => 
+                <div 
+                    style={{cursor: "pointer"}}
+                    key={meal.id}
+                    onClick={() => {navigate(`meals/${meal.id}`)}} 
+                >
+                    <img 
+                        src={meal.img} 
+                        alt={meal.name} 
+                    />
+                    <p 
+                        style={{ opacity: 1, backgroundColor: "black", fontSize: "20px" }} 
+                        className="legend">
+                            {meal.name}
+                    </p>
+                </div>
+            )}
+        </Carousel>
     )
 }
 
