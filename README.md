@@ -1,18 +1,25 @@
 # Make N' Eat
 
-## URL Link
+## Live Web Application
 https://makeneat.netlify.app/
 
 ## Overview
-On landing page, user will be able to view recipes, instructions and ingredients of meals. 
-They are able to access basic features as a non-registered user such searching and viewing
-reviews. When signing up, users are now able to favorite meals and write/delete their reviews.
+A web application to view meal recipes, meal ingredients and meal prep instructions. Non-registered users have basic features to search and view meals.
+Registered users will be able to favorite their meal meal recipes as well as writing and deleting their meal reviews.
 
 ## Tech Stack
 React, Express, PostgreSQL
 
 ## API
 https://www.themealdb.com/api.php?ref=apilist.fun
+
+## Get Started
+* Clone repo to local
+```bash
+$ createdb capstone2
+$ psql capstone2 < capstone2.sql
+$ npm start
+```
 
 ## Tests
 Tests are located in folder __ tests __
