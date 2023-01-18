@@ -8,7 +8,7 @@ A web application to view meal recipes, meal ingredients and meal prep instructi
 Registered users will be able to favorite their meal meal recipes as well as writing and deleting their meal reviews.
 
 ## Tech Stack
-React, Express, PostgreSQL
+React, Node, Express, PostgreSQL.
 
 ## API
 https://www.themealdb.com/api.php?ref=apilist.fun
@@ -37,4 +37,6 @@ $ npm test --runInBand
 Passwords are secured using Node Bcrypt. Non-registered users will not be able to access a favorite page and to add a meal review. However, they are able to access basic features such as searching, viewing meals and reviews.
 
 ## Long Term Goals for Additional Features
-* Implementation of adding a new meal. Authenticated users only. 
+* Authenticated users will be able to add new meal recipes.
+* Users can search by meal categories or alphabetically.
+* Users can check off meal ingredients that have already been used. 
